@@ -1,13 +1,160 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+/* Initial Resets */
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", "Poppins";
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  font-size: 62.5%;
 }
+
+:root {
+  --primary: #5e3bee;
+  --heading-color: #282938;
+  --bg-shade: #f5fcff;
+  --github: #e62872;
+  --darkblue: #1c1e53;
+  --black: #000;
+  --white: #fff;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+/* Utility Classes */
+.section-padding {
+  padding: 0 10rem;
+}
+
+.btn {
+  padding: 1.5rem 2rem;
+  outline: none;
+  border: none;
+  font-weight: 500;
+  font-size: 1.8rem;
+  background-color: transparent;
+  border-radius: 0.5rem;
+  transition: 0.3s all ease-in-out;
+}
+
+.btn-primary:hover,
+.btn-primary-outline {
+  border: 1px solid var(--primary);
+  color: var(--primary);
+}
+
+.btn-primary,
+.btn-primary-outline:hover {
+  background-color: var(--primary);
+  color: var(--white);
+  cursor: pointer;
+}
+
+/* Navbar Starts Here */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vw;
+  height: 9rem;
+  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.1);
+}
+
+.logoDiv .logo {
+  font-size: 3.5rem;
+  font-weight: bold;
+  font-family: "Rajdhani";
+  color: var(--primary);
+}
+
+.hamburger {
+  display: none;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-link {
+  font-size: 1.8rem;
+  color: #000;
+  font-weight: 500;
+}
+
+.menu li .active {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.hambuger-download-btn-div {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.hamburger button {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  outline: none;
+}
+
+/* Media Queries */
+@media (max-width: 991px) {
+  .menu {
+    /* display: none; */
+    height: 0px;
+    position: absolute;
+    top: 9rem;
+    flex-direction: column;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 1rem 0;
+    background-color: var(--white);
+    gap: 5rem;
+    width: 100vw;
+    overflow: hidden;
+    opacity: 0;
+    transition: .3s all ease;
+  }
+
+  .activeMenu {
+    height: 500px;
+    opacity: 1;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 0 7rem;
+  }
+}
+@media (max-width: 576px) {
+  .section-padding {
+    padding: 0 5rem;
+  }
+  .download-cv {
+    display: none;
+  }
+}@media (max-width: 480px) {
+  .section-padding {
+    padding: 0 2rem;
+  }
+}
+
